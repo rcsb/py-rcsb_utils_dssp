@@ -1,0 +1,2 @@
+rcsb.utils.io >= 1.16
+rcsb.utils.multiproc >= 0.18
