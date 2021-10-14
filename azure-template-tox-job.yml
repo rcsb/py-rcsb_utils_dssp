@@ -56,10 +56,10 @@ jobs:
             displayName: "Install bison"
           - script: which bison
             displayName: "Check bison"
-          - script: brew install boost
+          - script: brew install boost --with-icu4c # try this
             displayName: "Install boost libraries"
-          - script: export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/opt/icu4c/lib  # This was added to address an issue with the cmake on MacOS. Ideally this should be able to be removed later.
-            displayName: "Point boost -licudata"
+          # - script: export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/opt/icu4c/lib  # This was added to address an issue with the cmake on MacOS. Ideally this should be able to be removed later.
+          #   displayName: "Point boost -licudata"
       # ----------------------------------------------
       - ${{ if startsWith(parameters.os, 'linux') }}:
           - script: lsb_release -a
