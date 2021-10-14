@@ -58,6 +58,8 @@ jobs:
             displayName: "Check bison"
           - script: brew install boost
             displayName: "Install boost libraries"
+          - script: export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/opt/icu4c/lib  # This was added to address an issue with the cmake on MacOS. Ideally this should be able to be removed later.
+            displayName: "Point boost -licudata"
       # ----------------------------------------------
       - ${{ if startsWith(parameters.os, 'linux') }}:
           - script: lsb_release -a
@@ -163,6 +165,7 @@ jobs:
           cd build
           cmake ..
           cmake --build . --config Release
+          # ctest -C Release
           cmake --install .
         displayName: "Install DSSP"
       #
