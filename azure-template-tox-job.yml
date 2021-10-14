@@ -58,8 +58,8 @@ jobs:
             displayName: "Check bison"
           - script: brew install boost
             displayName: "Install boost libraries"
-          - script: brew reinstall boost --with-icu4c  # try this
-            displayName: "ReInstall boost libraries"
+          - script: brew install icu4c  # try this
+            displayName: "Install icu4c libraries"
           # - script: export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/opt/icu4c/lib  # This was added to address an issue with the cmake on MacOS. Ideally this should be able to be removed later.
           #   displayName: "Point boost -licudata"
       # ----------------------------------------------
