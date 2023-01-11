@@ -1,2 +1,3 @@
 # RCSB_UTILS_DSSP HISTORY
 12-Oct-2021  - V0.10 Created module
+ 9-Jan-2023  - V0.11 Configuration changes to support tox 4
